@@ -5,7 +5,11 @@
 		"port": 51825,
 		"pin": "222-00-222"
 	},
-	"accessories": [
+	"accessories": [{
+         		   "accessory": "RaspberryPiTemperature",
+       		           "name": "NetOS"
+       		 }
+
 	],
 	"platforms": [
 		{
@@ -19,10 +23,7 @@
                 		"method": "systemd",
                 		"service": "homebridge"
             		}
-		},
-		{
-         		   "accessory": "RaspberryPiTemperature",
-       		           "name": "NetOS"
-       		 }
+		}
+		
 	]
 }
