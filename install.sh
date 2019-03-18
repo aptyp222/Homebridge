@@ -1,8 +1,6 @@
 #!/bin/bash
 sudo apt install git -y
 
-sudo apt-get install samba samba-common-bin -y
-
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs libavahi-compat-libdnssd-dev
 
@@ -15,8 +13,8 @@ sudo npm install -g homebridge-raspberrypi-temperature
 sudo npm install -g homebridge-ds18b20
 sudo npm install -g homebridge-mi-aqara && sudo npm install -g miio 
 sudo npm install -g --unsafe-perm homebridge-gpio-garagedoor 
-sudo npm install -g homebridge-ds18b20
 sudo npm install -g homebridge-yeelight-wifi 
+sudo npm install -g homebridge-camera-ffmpeg
  
 sudo cp homebridge.service /etc/systemd/system/
 sudo cp homebridge /etc/default/
@@ -29,7 +27,7 @@ cd /tmp
 wget https://lion.drogon.net/wiringpi-2.46-1.deb
 sudo dpkg -i wiringpi-2.46-1.deb
 sudo usermod -G gpio pi
-cd
+cd ..
 sudo npm install -g homebridge-gpio-device --unsafe-perm
 
 
@@ -38,8 +36,12 @@ wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
 tar zxvf bcm2835-1.52.tar.gz
 cd bcm2835-1.52
 ./configure && make && sudo make check && sudo make install
-cd
+cd ..
 sudo npm install -g --unsafe-perm homebridge homebridge-pi-thermostat
+
+sudo apt-get install samba samba-common-bin -y
+sudo modprobe w1-gpio && sudo modprobe w1_therm && ls -l /sys/bus/w1/devices/
+
 
 homebridge -I -U
  
