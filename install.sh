@@ -1,13 +1,15 @@
 #!/bin/bash
+sudo apt install git -y
 
 sudo apt-get install samba samba-common-bin -y
 
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs libavahi-compat-libdnssd-dev
+
 mkdir -m 1777 ~/.homebridge && cp config.json ~/.homebridge
 
-sudo npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 sudo apt-get install mc -y
+sudo npm i -g --unsafe-perm homebridge homebridge-config-ui-x
 sudo npm install -g homebridge-people 
 sudo npm install -g homebridge-raspberrypi-temperature 
 sudo npm install -g homebridge-ds18b20
@@ -17,6 +19,8 @@ sudo npm install -g homebridge-ds18b20
 sudo npm install -g homebridge-yeelight-wifi 
  
 sudo cp homebridge.service /etc/systemd/system/
+sudo cp homebridge /etc/default/
+
 sudo systemctl daemon-reload
 sudo systemctl enable homebridge
 sudo systemctl start homebridge
