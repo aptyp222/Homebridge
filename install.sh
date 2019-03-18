@@ -37,6 +37,6 @@ cd bcm2835-1.52
 cd
 sudo npm install -g --unsafe-perm homebridge homebridge-pi-thermostat
 
-
+homebridge -I -U
  
  
