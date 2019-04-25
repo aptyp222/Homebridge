@@ -1,7 +1,7 @@
 #!/bin/bash
 sudo apt install git -y
 
-curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
 sudo apt-get install -y nodejs libavahi-compat-libdnssd-dev
 
 mkdir -m 1777 ~/.homebridge && cp config.json ~/.homebridge
