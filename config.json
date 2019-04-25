@@ -1,9 +1,9 @@
 {
 	"bridge": {
 		"name": "HomeBridge",
-		"username": "CC:22:00:0A:00:00",
-		"port": 51825,
-		"pin": "222-00-222"
+		"username": "CC:22:00:0A:00:77",
+		"port": 51827,
+		"pin": "777-77-777"
 	},
 	"accessories": [{
          		   "accessory": "RaspberryPiTemperature",
