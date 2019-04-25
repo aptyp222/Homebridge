@@ -32,9 +32,9 @@ sudo npm install -g homebridge-gpio-device --unsafe-perm
 
 
 
-wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
-tar zxvf bcm2835-1.52.tar.gz
-cd bcm2835-1.52
+wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.58.tar.gz
+tar zxvf bcm2835-1.58.tar.gz
+cd bcm2835-1.58
 ./configure && make && sudo make check && sudo make install
 cd ..
 sudo npm install -g --unsafe-perm homebridge homebridge-pi-thermostat
